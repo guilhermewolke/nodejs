@@ -1,17 +1,12 @@
 var http = require('http');
+var fs = require('fs');
 
 var server = http.createServer(function(request, response){
     response.writeHead(200, {"Content-Type" : "text/html"});
-    if (request.url == '/') {
-        response.write("<h1>Página principal!</h1>");
-    } else if (request.url == '/contato') {
-        response.write("<h1>Página de contato!</h1>");
-    } else if (request.url == '/clientes') {
-        response.write("<h1>Página de clientes!</h1>");
-    } else {
-        response.write("<h1>Página não encontrada!</h1>");
-    }
+    response.write("<h1>Página principal!</h1>");
     
+    var txt = fs.createWriteStream('./arquivos/clubes_escrito.txt', {flags: 'a'});
+    txt.write(request.url + '\n');
     response.end();
 });
 
