@@ -1,0 +1,13 @@
+{
+    "name":"aulas-nodejs",
+    "description":"Aulas de NodeJs",
+    "author":{
+        "name":"Guilherme R. Woelke .'.",
+        "email":"guilherme_wolke@yahoo.com"
+        },
+    "version":"1.0.0",
+    "private":true,
+    "dependencies":{
+        "mongoose":"*"
+    }
+}
